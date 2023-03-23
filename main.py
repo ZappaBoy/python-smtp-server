@@ -136,12 +136,11 @@ class SMTPService:
 
 if __name__ == "__main__":
     configs = SMTPConfigModel(
-        host=os.environ.get('ADMIN_SMTP_HOST'),
-        port=os.environ.get('ADMIN_SMTP_PORT'),
-        address=os.environ.get('ADMIN_SMTP_ADDRESS'),
-        password=os.environ.get('ADMIN_SMTP_PASSWORD'),
+        host=os.environ.get('SMTP_HOST'),
+        port=os.environ.get('SMTP_PORT'),
+        address=os.environ.get('SMTP_ADDRESS'),
+        password=os.environ.get('SMTP_PASSWORD'),
     )
-    print(configs)
     smtp_service = SMTPService(configs)
     receivers_list = [
         Receiver(
